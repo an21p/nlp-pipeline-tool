@@ -1,3 +1,7 @@
+"""
+Antonis Pishias, Alex Karavournarlis - University of Essex - Copyright 2015
+"""
+
 import sys
 import nltk
 import requests
@@ -6,7 +10,7 @@ import re
 from bs4 import BeautifulSoup
 
 from sklearn.feature_extraction.text import TfidfVectorizer
-#http://www.bogotobogo.com//python/NLTK/tf_idf_with_scikit-learn_NLTK.php
+
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.stem import WordNetLemmatizer
@@ -15,8 +19,17 @@ from nltk.stem import PorterStemmer
 
 
 def showHelp() :
+	"""
+	Prints the help document to the console.
+	Provides the key for the first parameter of the command line.
+	Each parameter value, corresponds to an option, which
+	represents a unique, self-sufficient function of the program.
+
+	@rtype:		void
+	@return:	console output
+	"""
 	print("\n" + str(sys.argv[0]) + \
-"""
+	"""
 
 	program functions:
 		HTML parsing
@@ -63,6 +76,14 @@ def showHelp() :
 
 #----------------------------------------------------------------------------------------------------------------
 def mainMenu() :
+	"""
+	Prints the main menu options, from which the user makes a choice.
+	Presets the user interface intuitively, as the choice is represented
+	by an integer, verified by the necessary controls.
+
+	@rtype:		void
+	@return:	console output
+	"""
 	while True :
 		print("""
 Main Menu:
@@ -82,6 +103,18 @@ Main Menu:
 
 #----------------------------------------------------------------------------------------------------------------
 def wordTokenize(text, num) :
+	"""
+	Tokenises a text segment per sentence, then each sentence, on a word basis.
+	Stores the output tokens in a file, predetermined by means of an index.
+
+	@type  text: string
+	@param text: holds untokenized, "raw" text
+	@type   num: number
+	@param  num: represents the order of the file, in the sample data set
+
+	@rtype:		 list<string>
+	@return:	 word tokens
+	"""
 	file_title=str(num)+'_1_tikenized'
 
 
@@ -99,6 +132,18 @@ def wordTokenize(text, num) :
 
 #----------------------------------------------------------------------------------------------------------------
 def posTag(text, num) :
+	"""
+	Extracts part-of-speech tags from a text segment's list of tokens.
+	Stores the output tokens in a file, predetermined by means of an index.
+
+	@type  text: string
+	@param text: holds the list of word tokens
+	@type   num: number
+	@param  num: represents the order of the file, in the sample data set
+
+	@rtype:		 list< < tuple < string, string > > >
+	@return:	 tuples of each word and its part-of-speech tag, per sentence
+	"""
 	file_title=str(num)+'_2_posTagged'
 
 
@@ -116,6 +161,18 @@ def posTag(text, num) :
 
 #----------------------------------------------------------------------------------------------------------------
 def stopWords(text, num) :
+	"""
+	Filters stop words out of a text segment's list of part-of-speech tags.
+	Stores the output tokens in a file, predetermined by means of an index.
+
+	@type  text: string
+	@param text: holds the list of POS tags
+	@type   num: number
+	@param  num: represents the order of the file, in the sample data set
+
+	@rtype:		 list< < tuple < string, string > > >
+	@return:	 tuples of each reamining word and its part-of-speech tag, per sentence
+	"""
 	file_title=str(num)+'_3_stopwords'
 	stop_words = set(stopwords.words("english"))
 
@@ -137,16 +194,40 @@ def stopWords(text, num) :
 
 #----------------------------------------------------------------------------------------------------------------
 def stem(text, num) :
+	"""
+	Outputs stems from a a text segment's list of part-of-speech tags.
+	Stores the output tokens in a file, predetermined by means of an index.
+
+	@type  text: string
+	@param text: holds the list of POS tags
+	@type   num: number
+	@param  num: represents the order of the file, in the sample data set
+
+	@rtype:		 void
+	@return:	 console output
+	"""
 	file_title=str(num)+'_4_stemmed'
 
 	ps = PorterStemmer()
 
+	# TODO:
 	for w in text:
  		print(ps.stem(w))
 
 #----------------------------------------------------------------------------------------------------------------
 def chunk(text) :
+	"""
+	Parses a specfically determined chunk sequence and utilises it for chunking.
+	It is then used to parse the text segment, provided as a parameter.
+	Eternally outputs a GUI, including a graph of the chunk parser's output.
+	The interface consists of a new window, per sentence.
 
+	@type  text: string
+	@param text: holds the text segment
+
+	@rtype:		 void
+	@return:	 graphical output
+	"""
 	chuckGram =r"""
 		NP: {<NNP>+}                		# chunk sequences of proper nouns
 			{<DT.?|PP\$>?<JJ.?>*<NN|NNS>}   # chunk determiner/possessive, adjectives and noun
@@ -163,6 +244,22 @@ def chunk(text) :
 
 #----------------------------------------------------------------------------------------------------------------
 def analyseFile(filename, a) :
+	"""
+	This is effectively the main, collective method of execution.
+	It initially attempts to open the file, from the provided path/name.
+	The file's content is split into an array, one element per line.
+	Should the user have entered the full analysis parameter "-a",
+	tokenisation, POS tagging, filtering, chunking and stemming are
+	performed, in this order.
+
+	@type  filename: string
+	@param filename: holds the name of the input file
+
+	@rtype:		 	 void
+	@return:	 	 file output
+
+	@except     err: the error occurs, should the file not be found
+	"""
 	# initialise filename
 	file_open = False
 	while True :
@@ -194,6 +291,16 @@ def analyseFile(filename, a) :
 
 #----------------------------------------------------------------------------------------------------------------
 def check(tag):
+	"""
+	Checks whether a tag is a "script" or a "form" tag.
+
+	@type  tag: string
+	@param tag: ......
+
+	@rtype:		boolean
+	@return:    returns True if the tag is of type "script" or "form"
+
+	"""
 	if tag.name in ['script','form']:
 		return False
 	if (tag.string==None):
@@ -202,6 +309,20 @@ def check(tag):
 
 #----------------------------------------------------------------------------------------------------------------
 def parseHTML(url, num):
+	"""
+	Essentially downloads a web page, from a provided URL.
+	Its HyperText Markup is then parsed, by means of BeautifulSoup.
+	A regex is used to clean the web page's title, and assign the
+	result to the output file. All lexicon tags from the file are
+	then separated, and appended to a new string, to be returned.
+
+	@type  url: url
+	@param url: the web page's uniform resource locator
+
+	@rtype:		string
+	@return:    holds the majority of words within the original text
+
+	"""
 	r = requests.get(url.strip())
 	soup = BeautifulSoup(r.content, 'lxml')
 	file_title = str(num)+'_0_'+ remove(soup.title.string, '\/:*?"<>|');
@@ -223,24 +344,48 @@ def parseHTML(url, num):
 
 #----------------------------------------------------------------------------------------------------------------
 def remove(value, deletechars):
-    for c in deletechars:
-        value = value.replace(c,'')
-    return value;
+	"""
+	A helper method which statically replaces a substring's value
+	with empty characters. Effectively allows its deletion.
+
+	@type   value: string
+	@param  value: the source string, to be processed
+
+	@rtype  value: string
+	@return value: the string, after processing is done
+	"""
+	for c in deletechars:
+		value = value.replace(c,'')
+
+	return value
 
 #----------------------------------------------------------------------------------------------------------------
-#main program
+def main():
+	"""
+	In all its glory, that's the program's formal main function.
+	Considers the command line arguments entered in the console.
+	It allows for automatic/interactive mode, or a help prompt.
+	Terminates execution, as soon as processing is complete.
+	"""
+	if len(sys.argv) == 1:
+		mainMenu()
+	else:
+		if sys.argv[1] == "-h": showHelp()
+		
+		elif sys.argv[1] == "-a":
+			if len(sys.argv) == 3:
+				analyseFile( str(sys.argv[2]), True)
+			else: print("invalid number of parameters for function 'analyseFile()'")
+		
+		sys.exit()
 
-if len(sys.argv) == 1:
-	#enter interactive mode
-	mainMenu()
-else:
-	#enter automated mode
-	if sys.argv[1] == "-h": showHelp()
-	
-	elif sys.argv[1] == "-a":
-		if len(sys.argv) == 3:
-			analyseFile( str(sys.argv[2]), True)
-		else: print("invalid number of parameters for function 'analyseFile()'")
-	
-	sys.exit()
-
+if __name__ == "__main__":
+	"""
+	This is the interpreter's conventional variable check splinter.
+	Should the "__name__" variable's value be "__main__", then the
+	source code is indeed been executed, directly as software.
+	Since, however, it is meant to be used also as a library, the
+	main() function shouldn't execute then. Should another module
+	import the code, the "__name__" variable will be assigned its name.
+	"""
+	main()

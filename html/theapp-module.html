@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>theapp</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Module&nbsp;theapp
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="theapp-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module theapp</h1><p class="nomargin-top"><span class="codelink"><a href="theapp-pysrc.html">source&nbsp;code</a></span></p>
+<p>Antonis Pishias, Alex Karavournarlis - University of Essex - Copyright
+  2015</p>
+
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">void</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theapp-module.html#showHelp" class="summary-sig-name">showHelp</a>()</span><br />
+      Prints the help document to the console.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theapp-pysrc.html#showHelp">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">void</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theapp-module.html#mainMenu" class="summary-sig-name">mainMenu</a>()</span><br />
+      Prints the main menu options, from which the user makes a choice.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theapp-pysrc.html#mainMenu">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list&lt;string&gt;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theapp-module.html#wordTokenize" class="summary-sig-name">wordTokenize</a>(<span class="summary-sig-arg">text</span>,
+        <span class="summary-sig-arg">num</span>)</span><br />
+      Tokenises a text segment per sentence, then each sentence, on a word 
+      basis.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theapp-pysrc.html#wordTokenize">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list&lt; &lt; tuple &lt; string, string &gt; &gt; &gt;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theapp-module.html#posTag" class="summary-sig-name">posTag</a>(<span class="summary-sig-arg">text</span>,
+        <span class="summary-sig-arg">num</span>)</span><br />
+      Extracts part-of-speech tags from a text segment's list of tokens.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theapp-pysrc.html#posTag">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list&lt; &lt; tuple &lt; string, string &gt; &gt; &gt;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theapp-module.html#stopWords" class="summary-sig-name">stopWords</a>(<span class="summary-sig-arg">text</span>,
+        <span class="summary-sig-arg">num</span>)</span><br />
+      Filters stop words out of a text segment's list of part-of-speech 
+      tags.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theapp-pysrc.html#stopWords">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">void</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theapp-module.html#stem" class="summary-sig-name">stem</a>(<span class="summary-sig-arg">text</span>,
+        <span class="summary-sig-arg">num</span>)</span><br />
+      Outputs stems from a a text segment's list of part-of-speech tags.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theapp-pysrc.html#stem">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">void</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theapp-module.html#chunk" class="summary-sig-name">chunk</a>(<span class="summary-sig-arg">text</span>)</span><br />
+      Parses a specfically determined chunk sequence and utilises it for 
+      chunking.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theapp-pysrc.html#chunk">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">void</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theapp-module.html#analyseFile" class="summary-sig-name">analyseFile</a>(<span class="summary-sig-arg">filename</span>,
+        <span class="summary-sig-arg">a</span>)</span><br />
+      This is effectively the main, collective method of execution.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theapp-pysrc.html#analyseFile">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">boolean</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theapp-module.html#check" class="summary-sig-name">check</a>(<span class="summary-sig-arg">tag</span>)</span><br />
+      Checks whether a tag is a &quot;script&quot; or a &quot;form&quot; 
+      tag.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theapp-pysrc.html#check">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">string</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theapp-module.html#parseHTML" class="summary-sig-name">parseHTML</a>(<span class="summary-sig-arg">url</span>,
+        <span class="summary-sig-arg">num</span>)</span><br />
+      Essentially downloads a web page, from a provided URL.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theapp-pysrc.html#parseHTML">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theapp-module.html#remove" class="summary-sig-name">remove</a>(<span class="summary-sig-arg">value</span>,
+        <span class="summary-sig-arg">deletechars</span>)</span><br />
+      A helper method which statically replaces a substring's value with 
+      empty characters.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theapp-pysrc.html#remove">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theapp-module.html#main" class="summary-sig-name">main</a>()</span><br />
+      In all its glory, that's the program's formal main function.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theapp-pysrc.html#main">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="showHelp"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">showHelp</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theapp-pysrc.html#showHelp">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Prints the help document to the console. Provides the key for the 
+  first parameter of the command line. Each parameter value, corresponds to
+  an option, which represents a unique, self-sufficient function of the 
+  program.</p>
+  <dl class="fields">
+    <dt>Returns: void</dt>
+        <dd>console output</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="mainMenu"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">mainMenu</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theapp-pysrc.html#mainMenu">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Prints the main menu options, from which the user makes a choice. 
+  Presets the user interface intuitively, as the choice is represented by 
+  an integer, verified by the necessary controls.</p>
+  <dl class="fields">
+    <dt>Returns: void</dt>
+        <dd>console output</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="wordTokenize"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">wordTokenize</span>(<span class="sig-arg">text</span>,
+        <span class="sig-arg">num</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theapp-pysrc.html#wordTokenize">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Tokenises a text segment per sentence, then each sentence, on a word 
+  basis. Stores the output tokens in a file, predetermined by means of an 
+  index.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>text</code></strong> (string) - holds untokenized, &quot;raw&quot; text</li>
+        <li><strong class="pname"><code>num</code></strong> (number) - represents the order of the file, in the sample data set</li>
+    </ul></dd>
+    <dt>Returns: list&lt;string&gt;</dt>
+        <dd>word tokens</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="posTag"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">posTag</span>(<span class="sig-arg">text</span>,
+        <span class="sig-arg">num</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theapp-pysrc.html#posTag">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Extracts part-of-speech tags from a text segment's list of tokens. 
+  Stores the output tokens in a file, predetermined by means of an 
+  index.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>text</code></strong> (string) - holds the list of word tokens</li>
+        <li><strong class="pname"><code>num</code></strong> (number) - represents the order of the file, in the sample data set</li>
+    </ul></dd>
+    <dt>Returns: list&lt; &lt; tuple &lt; string, string &gt; &gt; &gt;</dt>
+        <dd>tuples of each word and its part-of-speech tag, per sentence</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="stopWords"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">stopWords</span>(<span class="sig-arg">text</span>,
+        <span class="sig-arg">num</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theapp-pysrc.html#stopWords">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Filters stop words out of a text segment's list of part-of-speech 
+  tags. Stores the output tokens in a file, predetermined by means of an 
+  index.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>text</code></strong> (string) - holds the list of POS tags</li>
+        <li><strong class="pname"><code>num</code></strong> (number) - represents the order of the file, in the sample data set</li>
+    </ul></dd>
+    <dt>Returns: list&lt; &lt; tuple &lt; string, string &gt; &gt; &gt;</dt>
+        <dd>tuples of each reamining word and its part-of-speech tag, per 
+          sentence</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="stem"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">stem</span>(<span class="sig-arg">text</span>,
+        <span class="sig-arg">num</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theapp-pysrc.html#stem">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Outputs stems from a a text segment's list of part-of-speech tags. 
+  Stores the output tokens in a file, predetermined by means of an 
+  index.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>text</code></strong> (string) - holds the list of POS tags</li>
+        <li><strong class="pname"><code>num</code></strong> (number) - represents the order of the file, in the sample data set</li>
+    </ul></dd>
+    <dt>Returns: void</dt>
+        <dd>console output</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="chunk"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">chunk</span>(<span class="sig-arg">text</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theapp-pysrc.html#chunk">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Parses a specfically determined chunk sequence and utilises it for 
+  chunking. It is then used to parse the text segment, provided as a 
+  parameter. Eternally outputs a GUI, including a graph of the chunk 
+  parser's output. The interface consists of a new window, per 
+  sentence.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>text</code></strong> (string) - holds the text segment</li>
+    </ul></dd>
+    <dt>Returns: void</dt>
+        <dd>graphical output</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="analyseFile"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">analyseFile</span>(<span class="sig-arg">filename</span>,
+        <span class="sig-arg">a</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theapp-pysrc.html#analyseFile">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This is effectively the main, collective method of execution. It 
+  initially attempts to open the file, from the provided path/name. The 
+  file's content is split into an array, one element per line. Should the 
+  user have entered the full analysis parameter &quot;-a&quot;, 
+  tokenisation, POS tagging, filtering, chunking and stemming are 
+  performed, in this order.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>filename</code></strong> (string) - holds the name of the input file</li>
+    </ul></dd>
+    <dt>Returns: void</dt>
+        <dd>file output</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>err</strong></code> - the error occurs, should the file not be found</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="check"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">check</span>(<span class="sig-arg">tag</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theapp-pysrc.html#check">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Checks whether a tag is a &quot;script&quot; or a &quot;form&quot; 
+  tag.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>tag</code></strong> (string) - ......</li>
+    </ul></dd>
+    <dt>Returns: boolean</dt>
+        <dd>returns True if the tag is of type &quot;script&quot; or 
+          &quot;form&quot;</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="parseHTML"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">parseHTML</span>(<span class="sig-arg">url</span>,
+        <span class="sig-arg">num</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theapp-pysrc.html#parseHTML">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Essentially downloads a web page, from a provided URL. Its HyperText 
+  Markup is then parsed, by means of BeautifulSoup. A regex is used to 
+  clean the web page's title, and assign the result to the output file. All
+  lexicon tags from the file are then separated, and appended to a new 
+  string, to be returned.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>url</code></strong> (url) - the web page's uniform resource locator</li>
+    </ul></dd>
+    <dt>Returns: string</dt>
+        <dd>holds the majority of words within the original text</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="remove"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">remove</span>(<span class="sig-arg">value</span>,
+        <span class="sig-arg">deletechars</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theapp-pysrc.html#remove">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>A helper method which statically replaces a substring's value with 
+  empty characters. Effectively allows its deletion.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>value</code></strong> (string) - the source string, to be processed</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="main"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">main</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theapp-pysrc.html#main">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>In all its glory, that's the program's formal main function. Considers
+  the command line arguments entered in the console. It allows for 
+  automatic/interactive mode, or a help prompt. Terminates execution, as 
+  soon as processing is complete.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Dec  3 04:25:48 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

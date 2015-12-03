@@ -1,0 +1,13 @@
+theapp	theapp-module.html
+theapp.chunk	theapp-module.html#chunk
+theapp.remove	theapp-module.html#remove
+theapp.check	theapp-module.html#check
+theapp.parseHTML	theapp-module.html#parseHTML
+theapp.showHelp	theapp-module.html#showHelp
+theapp.wordTokenize	theapp-module.html#wordTokenize
+theapp.main	theapp-module.html#main
+theapp.analyseFile	theapp-module.html#analyseFile
+theapp.stem	theapp-module.html#stem
+theapp.stopWords	theapp-module.html#stopWords
+theapp.mainMenu	theapp-module.html#mainMenu
+theapp.posTag	theapp-module.html#posTag
