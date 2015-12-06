@@ -136,13 +136,16 @@ def stopWords(text, num) :
 	return filtered_sentences #list of pos tuples (words) in list of sentences 
 
 #----------------------------------------------------------------------------------------------------------------
-def stem(text, num) :
-	file_title=str(num)+'_4_stemmed'
-
-	ps = PorterStemmer()
-
-	for w in text:
- 		print(ps.stem(w))
+def traverse(tree): 
+	try:
+		tree.label()
+	except AttributeError:
+		return 
+	else:
+		if tree.label() == 'NP': 
+			print (tree) # or do something else 
+		else:
+			for child in tree: traverse(child)
 
 #----------------------------------------------------------------------------------------------------------------
 def chunk(text) :
@@ -158,8 +161,16 @@ def chunk(text) :
 	chunkParser = nltk.RegexpParser(chuckGram)
 	for sentence in text:
 		chunked = chunkParser.parse(sentence)
-		chunked.draw()
+		traverse(chunked)
 
+#----------------------------------------------------------------------------------------------------------------
+def stem(text, num) :
+	file_title=str(num)+'_5_stemmed'
+
+	ps = PorterStemmer()
+
+	for w in text:
+ 		print(ps.stem(w))
 
 #----------------------------------------------------------------------------------------------------------------
 def analyseFile(filename, a) :

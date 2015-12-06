@@ -2,7 +2,6 @@ import nltk
 import random
 import pickle
 import requests
-import subprocess as sp
 
 from statistics import mode
 
@@ -104,14 +103,14 @@ documents = []
 #allowed_word_types = ["J","R","V"]
 allowed_word_types = ["J"]
 
-# create a list of tuples ()
-# for p in politics.split("\n"):
-# 	webpages.append((p,"politics"))
-# 	words = word_tokenize(p)
-# 	pos = nltk.pos_tag(words)
-# 	for w in pos:
-# 		if w[1][0] in allowed_word_types:
-# 			full_word_list.append(w[0].lower())
+#create a list of tuples ()
+for p in politics.split("\n"):
+	documents.append((p,"politics"))
+	words = word_tokenize(p)
+	pos = nltk.pos_tag(words)
+	for w in pos:
+		if w[1][0] in allowed_word_types:
+			full_word_list.append(w[0].lower())
 
 
 for p in sport.split("\n"):
@@ -140,8 +139,12 @@ featuresets = [(find_features(rev), category) for (rev, category) in documents]
 random.shuffle(featuresets)
 print(len(featuresets))
 
-training_set = featuresets[10:]
-testing_set = featuresets[:5]
+training_set = featuresets[100:]
+testing_set = featuresets[:50]
+
+featuresets_f = open("pickled_class/featuresets.pickle", "wb")
+pickle.dump(featuresets,featuresets_f)
+featuresets_f.close()
 
 ###############
 classifier = nltk.NaiveBayesClassifier.train(training_set)
