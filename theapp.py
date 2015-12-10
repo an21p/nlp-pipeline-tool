@@ -215,9 +215,21 @@ def stem(text, num) :
  		print(ps.stem(w))
 
 #----------------------------------------------------------------------------------------------------------------
+def traverse(tree): 
+	try:
+		tree.label()
+	except AttributeError:
+		return 
+	else:
+		if tree.label() == 'NP': 
+			print (tree) # or do something else 
+		else:
+			for child in tree: traverse(child)
+
+#----------------------------------------------------------------------------------------------------------------
 def chunk(text) :
 	"""
-	Parses a specfically determined chunk sequence and utilises it for chunking.
+	Parses a specifically determined chunk sequence and utilises it for chunking.
 	It is then used to parse the text segment, provided as a parameter.
 	Eternally outputs a GUI, including a graph of the chunk parser's output.
 	The interface consists of a new window, per sentence.
@@ -239,8 +251,16 @@ def chunk(text) :
 	chunkParser = nltk.RegexpParser(chuckGram)
 	for sentence in text:
 		chunked = chunkParser.parse(sentence)
-		chunked.draw()
+		traverse(chunked)
 
+#----------------------------------------------------------------------------------------------------------------
+def stem(text, num) :
+	file_title=str(num)+'_5_stemmed'
+
+	ps = PorterStemmer()
+
+	for w in text:
+ 		print(ps.stem(w))
 
 #----------------------------------------------------------------------------------------------------------------
 def analyseFile(filename, a) :
