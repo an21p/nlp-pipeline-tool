@@ -83,7 +83,7 @@ voted_classifier = VoteClassifier(
                                   LogisticRegression_classifier)
 
 
-def sentiment(text):
+def is_a_is_not(text):
     feats = find_features(text.lower())
     return voted_classifier.classify(feats),voted_classifier.confidence(feats)
 

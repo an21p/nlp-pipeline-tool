@@ -87,21 +87,21 @@ def splitCorpus(corpus_path):
 		elif (len(line) > 0 and "NOT" in line):
 			not_politics += line.replace("NOT\t","")+"\n"
 
-	politics_txt = open("training/politics.txt", "w+")
+	politics_txt = open("samples/politics.txt", "w+")
 	politics_txt.write(politics)
 	politics_txt.close()
 
-	not_politics_txt = open("training/not_politics.txt", "w+")
+	not_politics_txt = open("samples/not_politics.txt", "w+")
 	not_politics_txt.write(not_politics)
 	not_politics_txt.close()
 
 #----------------------------------------------------------------------------------------------------------------
 #making a file with all the parsed text from the urls grabbed
 def UrL2Text():
-	sport_web = open("training/sport_web.txt", "r").read()
-	politics_web = open("training/politics_web.txt", "r").read()
+	sport_web = open("samples/sport_web.txt", "r").read()
+	politics_web = open("samples/politics_web.txt", "r").read()
 
-	sport = open("training/sport.txt", "a")
+	sport = open("samples/sport.txt", "a")
 	for webpage in sport_web.split("\n"):
 		if (len(webpage)>0):
 			parsed = parseHTML(webpage)
@@ -110,7 +110,7 @@ def UrL2Text():
 	sport.close()
 
 
-	politics = open("training/politics.txt", "a")
+	politics = open("samples/politics.txt", "a")
 	for webpage in politics_web.split("\n"):
 		if (len(webpage)>0):
 			parsed = parseHTML(webpage)
@@ -131,7 +131,7 @@ def trainCorpus(is_a_path, is_not_path):
 
 	#create a list of tuples ()
 	for a in is_a.split("\n"):
-		documents.append((a,"is_a"))
+		documents.append((a,"is a"))
 		words = word_tokenize(a)
 		pos = nltk.pos_tag(words)
 		for w in pos:
@@ -140,7 +140,7 @@ def trainCorpus(is_a_path, is_not_path):
 
 
 	for p in is_not.split("\n"):
-			documents.append((p,"is_not"))
+			documents.append((p,"is not"))
 			words = word_tokenize(p)
 			pos = nltk.pos_tag(words)
 			for w in pos:
@@ -228,10 +228,10 @@ def processDocuments(documents, full_word_list):
 	save_classifier.close()
 
 def main():
-	splitCorpus("training/politics_bool.txt")
+	splitCorpus("samples/politics_bool.txt")
 
-	politics = open("training/politics_min.txt", "r").read()
-	not_politics = open("training/not_politics_min.txt", "r").read()
+	politics = open("samples/politics_min.txt", "r").read()
+	not_politics = open("samples/not_politics_min.txt", "r").read()
 
 	full_word_list = []
 	documents = []

@@ -8,6 +8,7 @@ import requests
 import re
 
 import trainer
+import is_a_is_not as is_a
 
 from bs4 import BeautifulSoup
 
@@ -365,6 +366,14 @@ def parseHTML(url, num):
 	return visible_text
 
 #----------------------------------------------------------------------------------------------------------------
+def test_is_a(test_module, sample_path):
+	sample = open(sample_path, "r").read()
+
+	for line in sample.split("\n"):
+		print(test_module.is_a_is_not(line))
+
+
+#----------------------------------------------------------------------------------------------------------------
 def remove(value, deletechars):
 	"""
 	A helper method which statically replaces a substring's value
@@ -392,19 +401,27 @@ def main():
 	if len(sys.argv) == 1:
 		mainMenu()
 	else:
-		if sys.argv[1] == "-h": showHelp()
+		if str(sys.argv[1]) in ('-h', '--help'): showHelp()
 		
-		elif sys.argv[1] == "-a":
+		elif str(sys.argv[1]) in ('-a', '--analyse'):
 			if len(sys.argv) == 3:
 				print("Analysing the file...")
 				analyseFile( str(sys.argv[2]), True)
-			else: print("Invalid number of parameters for the analyse 'a' command, terminating.")
+			else: print("Invalid number of parameters for the analyse 'a'/'analyse' command, terminating...")
 
-		elif sys.argv[1] == '-t':
+		elif str(sys.argv[1]) in ('-t', '--train'):
 			if len(sys.argv) == 4:
 				print("Training from the corpus, please be patient...")			
 				trainer.trainCorpus(str(sys.argv[2]), str(sys.argv[3]))
-			else: print("Invalid number of parameters for the train 't' command, terminating")
+			else: print("Invalid number of parameters for the train 't'/'train' command, terminating...")
+
+		elif str(sys.argv[1]) in ('-i', '--is'):
+			if (len(sys.argv) == 3):
+				print("Testing against the provided sample...")
+				test_is_a(is_a, str(sys.argv[2]))
+			else: print("Invalid number of parameters for the test 'i'/'is' command, terminating...")
+
+
 		
 		sys.exit()
 
