@@ -1,0 +1,8 @@
+CE314/CE887 : Syllabus CE314/CE887 : Natural Language Engineering Syllabus ( subject to changes ) The readings are from the Jurafsky / Martin ( 2008 ) textbook , except where noted . 
+Week Week Day Day Topic Topic Reading Reading Assignments Assignments Lecture Notes Lecture Notes 2 9 Oct Lecture : Introduction to NLE Ch . 
+1 Lectures 1-2 Lectures 1-2 9 Oct Lectures : Linguistic Essentials & Regular Expressions Book Chapter Lecture 3 Lecture 4 3 12 Oct Lab : Regular Expressions in Java and Perl Labscript 1 Labscript 1 16 Oct Lectures : Finite State Automata & Transducers Ch . 
+2 , 3 Lectures 5-6 Lectures 5-6 4 19 Oct Class 23 Oct Lectures : Statistical NLE Ch . 
+4 Lectures 7-8 Lectures 7-8 5 26 Oct Lab : NLE Software Labscript 2 Labscript 2 30 Oct Lectures : POS Tagging Ch . 
+5 Assignment 1 ( CE314 ) Assignment 1 ( CE887 ) Lectures 9-10 Lectures 9-10 6 6 Nov Lectures : Grammars Ch . 
+12 , 13 Lectures 11-12 Lectures 11-12 7 9 Nov Lab : Statistical NLP Labscript 3 Labscript 3 13 Nov Lectures : Complexity , Semantics Ch . 
+14,16,17 ; NLTK : run parser examples ; See slides for more reading Lectures 13-14 Lectures 13-14 8 16 Nov Class 20 Nov Lecture : Information Retrieval , Information Extraction TREC 2011 ( Essex ) ( Justeson & Katz,1995 ) ( Radev et al.,2005 ) Assignment 2 ( CE314 ) Assignment 2 ( CE887 ) Lectures 15-18 Lectures 15-18 9 23 Nov Lab : Parsing , NLE Tools , PhraseDetectives Labscript 4 Labscript 4 27 Nov Lectures : IR , IE , QA ( continued ) 10 30 Nov Class 4 Dec Lectures : Web Search Profile-based Summarisation for Web Site Navigation ( TOIS paper ) Lectures 19-20 Lectures 19-20 11 7 Dec Class 

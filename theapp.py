@@ -140,7 +140,7 @@ def wordTokenize(text, num) :
 			file.write(word+' ')
 		file.write('\n')
 	file.close()
-	return tokenizednum
+	return tokenized
 
 #----------------------------------------------------------------------------------------------------------------
 def posTag(text, num) :
@@ -224,7 +224,7 @@ def stem(text, num) :
 
 	# TODO:
 	for w in text:
- 		print(ps.stem(w))
+ 		print(ps.stem(w[1]))
 
 #----------------------------------------------------------------------------------------------------------------
 def traverse(tree): 
@@ -307,8 +307,8 @@ def analyseFile(filename, a) :
 				posTagged = posTag(tokenized, filenum)
 				noStopwords = stopWords(posTagged, filenum) 
 				chunked = chunk(noStopwords)
-				#chunked = chunk(posTagged)
-				#stemmed = stem(tokenized, filenum)
+				chunked = chunk(posTagged)
+				stemmed = stem(tokenized, filenum)
 			filenum+=1
 		f.close()	
 
