@@ -14,9 +14,6 @@
 <table class="navbar" border="0" width="100%" cellpadding="0"
        bgcolor="#a0c0ff" cellspacing="0">
   <tr valign="middle">
-  <!-- Home link -->
-      <th bgcolor="#70b0f0" class="navbar-select"
-          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
 
   <!-- Tree link -->
       <th>&nbsp;&nbsp;&nbsp;<a
@@ -185,12 +182,28 @@
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="traverse"></a><span class="summary-sig-name">traverse</span>(<span class="summary-sig-arg">tree</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theapp-pysrc.html#traverse">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">void</span>
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a href="theapp-module.html#chunk" class="summary-sig-name">chunk</a>(<span class="summary-sig-arg">text</span>)</span><br />
-      Parses a specfically determined chunk sequence and utilises it for 
+      Parses a specifically determined chunk sequence and utilises it for 
       chunking.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="theapp-pysrc.html#chunk">source&nbsp;code</a></span>
@@ -248,6 +261,25 @@
       Essentially downloads a web page, from a provided URL.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="theapp-pysrc.html#parseHTML">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="theapp-module.html#test_is_a" class="summary-sig-name">test_is_a</a>(<span class="summary-sig-arg">test_module</span>,
+        <span class="summary-sig-arg">sample_path</span>)</span><br />
+      Generic function to call the sample testing function from the 
+      is_a_is_not object, of which it is a member.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="theapp-pysrc.html#test_is_a">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -402,12 +434,12 @@
   </tr></table>
   
   <p>Extracts part-of-speech tags from a text segment's list of tokens. 
-  Stores the output tokens in a file, predetermined by means of an 
+  Stores the outputnum tokens in a file, predetermined by means of an 
   index.</p>
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>text</code></strong> (string) - holds the list of word tokens</li>
+        <li><strong class="pname"><code>text</code></strong> (list&lt;string&gt;) - holds the list of word tokens</li>
         <li><strong class="pname"><code>num</code></strong> (number) - represents the order of the file, in the sample data set</li>
     </ul></dd>
     <dt>Returns: list&lt; &lt; tuple &lt; string, string &gt; &gt; &gt;</dt>
@@ -436,7 +468,7 @@
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>text</code></strong> (string) - holds the list of POS tags</li>
+        <li><strong class="pname"><code>text</code></strong> (list&lt; &lt; tuple &lt; string, string &gt; &gt; &gt;) - holds the list of POS tags</li>
         <li><strong class="pname"><code>num</code></strong> (number) - represents the order of the file, in the sample data set</li>
     </ul></dd>
     <dt>Returns: list&lt; &lt; tuple &lt; string, string &gt; &gt; &gt;</dt>
@@ -466,7 +498,7 @@
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>text</code></strong> (string) - holds the list of POS tags</li>
+        <li><strong class="pname"><code>text</code></strong> (list&lt; &lt; tuple &lt; string, string &gt; &gt; &gt;) - holds the list of POS tags</li>
         <li><strong class="pname"><code>num</code></strong> (number) - represents the order of the file, in the sample data set</li>
     </ul></dd>
     <dt>Returns: void</dt>
@@ -488,7 +520,7 @@
     </td>
   </tr></table>
   
-  <p>Parses a specfically determined chunk sequence and utilises it for 
+  <p>Parses a specifically determined chunk sequence and utilises it for 
   chunking. It is then used to parse the text segment, provided as a 
   parameter. Eternally outputs a GUI, including a graph of the chunk 
   parser's output. The interface consists of a new window, per 
@@ -595,6 +627,34 @@
   </dl>
 </td></tr></table>
 </div>
+<a name="test_is_a"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">test_is_a</span>(<span class="sig-arg">test_module</span>,
+        <span class="sig-arg">sample_path</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="theapp-pysrc.html#test_is_a">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Generic function to call the sample testing function from the 
+  is_a_is_not object, of which it is a member. That is executed from the 
+  corresponding imported, module. It outputs whether each test sentence 
+  belongs to the category, or not.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>test_module</code></strong> (string) - a reference to the is_a_is_not module</li>
+        <li><strong class="pname"><code>sample_path</code></strong> (string) - the path of the sample text file, to test</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
 <a name="remove"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
@@ -615,7 +675,9 @@
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>value</code></strong> (string) - the source string, to be processed</li>
+        <li><strong class="pname"><code>value</code></strong> (string) - the source string, to be processed
+          <p>@rtype             string @return            the string 
+          following processing</p></li>
     </ul></dd>
   </dl>
 </td></tr></table>
@@ -647,9 +709,6 @@
 <table class="navbar" border="0" width="100%" cellpadding="0"
        bgcolor="#a0c0ff" cellspacing="0">
   <tr valign="middle">
-  <!-- Home link -->
-      <th bgcolor="#70b0f0" class="navbar-select"
-          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
 
   <!-- Tree link -->
       <th>&nbsp;&nbsp;&nbsp;<a
@@ -669,7 +728,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Thu Dec  3 04:25:48 2015
+    Generated by Epydoc 3.0.1 on Thu Dec 10 23:34:25 2015
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

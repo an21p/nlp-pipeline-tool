@@ -20,11 +20,32 @@ word_features = []
 
 #----------------------------------------------------------------------------------------------------------------
 class Voter(ClassifierI):
+	"""
+    Declaration of the Voter class functions.
+    """
 	#classifiers have to be odd so the mode can work
 	def __init__(self, *classifiers):
+		"""
+        Initialiser/constructor method, assigns a copy of the classifier list
+        to a member variable of the class object.
+
+        @type  *classifiers: *list<ClassifierI>
+        @param "classifiers: points to the list of Classifier objects
+        """
 		self.__classifiers=classifiers
 
 	def classify(self, features):
+		"""
+        For each of the classifier objects, it attempts to classify based on the
+        features, provided via the parameter. Each classification is expressed
+        as a vote.
+
+        @type  features: list<string>
+        @param features: containts the list of features
+
+        @rtype           string
+        @return          the most popular vote
+        """
 		votes = []
 		for c in self.__classifiers:
 			v = c.classify(features)
@@ -32,6 +53,16 @@ class Voter(ClassifierI):
 		return mode(votes)
 
 	def confidence(self, features):
+		"""
+        Introduces a sentiment of confidence, as a parameter. Calculates the ratio
+        of positive votes, for the winning vote in particular, as per the total.
+
+        @type  features: list<string>
+        @param features: containts the list of features
+
+        @rtype           number
+        @return          the ratio of the form: 3 positive / 5 total (votes)
+        """
 		votes = []
 		for c in self.__classifiers:
 			v = c.classify(features)
@@ -43,6 +74,16 @@ class Voter(ClassifierI):
 
 #----------------------------------------------------------------------------------------------------------------
 def check(tag):
+	"""
+	Checks whether a tag is a "script" or a "form" tag.
+
+	@type  tag: string
+	@param tag: ......
+
+	@rtype:		boolean
+	@return:    returns True if the tag is of type "script" or "form"
+
+	"""
 	if tag.name in ['script','form']:
 		return False
 	if (tag.string==None):
@@ -51,6 +92,20 @@ def check(tag):
 
 #----------------------------------------------------------------------------------------------------------------
 def parseHTML(url):
+	"""
+	Essentially downloads a web page, from a provided URL.
+	Its HyperText Markup is then parsed, by means of BeautifulSoup.
+	A regex is used to clean the web page's title, and assign the
+	result to the output file. All lexicon tags from the file are
+	then separated, and appended to a new string, to be returned.
+
+	@type  url: url
+	@param url: the web page's uniform resource locator
+
+	@rtype:		string
+	@return:    holds the majority of words within the original text
+
+	"""
 	r = requests.get(url.strip())
 	soup = BeautifulSoup(r.content, 'lxml')
 	visible_text = []
@@ -67,6 +122,15 @@ def parseHTML(url):
 #----------------------------------------------------------------------------------------------------------------
 #find the words in the document that are also in word_features 
 def find_features(document):
+	"""
+    Finds the features, by tokenising the provided text string.
+
+    @type  features: string
+    @param features: containts the text document's content
+
+    @rtype           list<string>
+    @return          contains the list of features
+    """
 	words = word_tokenize(document)
 	features = {}
 	for w in word_features:
@@ -75,6 +139,17 @@ def find_features(document):
 
 #----------------------------------------------------------------------------------------------------------------
 def splitCorpus(corpus_path):
+	"""
+	Parsing method, which allows to split the unified corpus, for our tests.
+	Each line started with the annotations "POLIT" or "NOT", to indicate
+	wheter politics-related or not, respectively.
+
+	@type  corpus_path: string
+	@param corpus_path: the absolute path of the unified training corpus
+
+	@rtype void
+	@return file output
+	"""
 	politics_bool = open(corpus_path, "r").read()
 
 	politics = ""
@@ -98,6 +173,15 @@ def splitCorpus(corpus_path):
 #----------------------------------------------------------------------------------------------------------------
 #making a file with all the parsed text from the urls grabbed
 def UrL2Text():
+	"""
+	Parser method, utilised to concatenate all the parsed text,
+	downloaded from URLs, and write it all to a file. In that older test,
+	it forms training corpuses, from their corresponding URL dictionaries.
+	The categories were then "sport" and "politics". It was enlightening.
+
+	@rtype  void
+	@return file output
+	"""
 	sport_web = open("samples/sport_web.txt", "r").read()
 	politics_web = open("samples/politics_web.txt", "r").read()
 
@@ -120,6 +204,22 @@ def UrL2Text():
 
 #----------------------------------------------------------------------------------------------------------------
 def trainCorpus(is_a_path, is_not_path):
+	"""
+	Trains, given two complementary corpuses. One of these
+	includes sentences belonging to a certain category, the
+	other includes sentences not belonging to that category.
+
+	@type  is_a_path: 	  string
+	@param is_a_path: 	  defined as "is_a", the sample set of
+					  	  sentences, belonging to the category
+
+    @type  is_not_a_path: string
+    @param is_not_a_path: defined as "is_not", the other sample
+    					  set, not belonging to the category
+
+    @rtype  void
+    @return file output, in the form of dumped pickled classes
+	"""
 	is_a = open(is_a_path, "r").read()
 	is_not = open(is_not_path, "r").read()
 
@@ -150,6 +250,21 @@ def trainCorpus(is_a_path, is_not_path):
 	processDocuments(documents, full_word_list)
 
 def processDocuments(documents, full_word_list):
+	"""
+	Handles the frequency distribution, saving word features, shuffling feature sets,
+	training the Naive Bayes classifiers etc. It also separates the training sample
+	to a subset for training, and one, reserved for testing back. Eternally, it saves
+	the final .pickle file in the "pickled_class" directory.
+
+	@type   documents: 	    string
+	@param  documents:      stores the content text of the source .pickle file 
+
+	@type   full_word_list: list<string>
+	@param  full_word_list: containts all words
+
+	@rtype  void
+	@return console output
+	"""
 	save_documents = open("pickled_class/documents.pickle","wb")
 	pickle.dump(documents,save_documents)
 	save_documents.close()
@@ -228,6 +343,11 @@ def processDocuments(documents, full_word_list):
 	save_classifier.close()
 
 def main():
+	"""
+	The trainer's main function, when necessary to execute as a module,
+	directly. Performs our test, of terms which belong to the politics
+	category, and terms which do not.
+	"""
 	splitCorpus("samples/politics_bool.txt")
 
 	politics = open("samples/politics_min.txt", "r").read()
@@ -261,4 +381,12 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+	"""
+	This is the interpreter's conventional variable check splinter.
+	Should the "__name__" variable's value be "__main__", then the
+	source code is indeed been executed, directly as a module.
+	Since, however, it is meant to be used also as an import, the
+	main() function shouldn't execute then. Should another module
+	import the code, the "__name__" variable will be assigned its name.
+	"""
+	main()

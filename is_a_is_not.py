@@ -1,7 +1,5 @@
-
 import nltk
 import random
-#from nltk.corpus import movie_reviews
 from nltk.classify.scikitlearn import SklearnClassifier
 import pickle
 from sklearn.naive_bayes import MultinomialNB, BernoulliNB
@@ -14,10 +12,31 @@ from nltk.tokenize import word_tokenize
 
 
 class VoteClassifier(ClassifierI):
+    """
+    Declaration of the Vote Classifier class functions.
+    """
     def __init__(self, *classifiers):
+        """
+        Initialiser/constructor method, assigns a copy of the classifier list
+        to a member variable of the class object.
+
+        @type  *classifiers: *list<ClassifierI>
+        @param "classifiers: points to the list of Classifier objects
+        """
         self._classifiers = classifiers
 
     def classify(self, features):
+        """
+        For each of the classifier objects, it attempts to classify based on the
+        features, provided via the parameter. Each classification is expressed
+        as a vote.
+
+        @type  features: list<string>
+        @param features: containts the list of features
+
+        @rtype           string
+        @return          the most popular vote
+        """
         votes = []
         for c in self._classifiers:
             v = c.classify(features)
@@ -25,6 +44,16 @@ class VoteClassifier(ClassifierI):
         return mode(votes)
 
     def confidence(self, features):
+        """
+        Introduces a sentiment of confidence, as a parameter. Calculates the ratio
+        of positive votes, for the winning vote in particular, as per the total.
+
+        @type  features: list<string>
+        @param features: containts the list of features
+
+        @rtype           number
+        @return          the ratio of the form 7 positive / 12 total (votes)
+        """
         votes = []
         for c in self._classifiers:
             v = c.classify(features)
@@ -44,6 +73,15 @@ word_features = pickle.load(word_features5k_f)
 word_features5k_f.close()
 
 def find_features(document):
+    """
+    Finds the features, by tokenising the provided text string.
+
+    @type  document: string
+    @param document: containts the text document's content
+
+    @rtype           list<string>
+    @return          contains the list of features
+    """
     words = word_tokenize(document)
     features = {}
     for w in word_features:
@@ -84,7 +122,14 @@ voted_classifier = VoteClassifier(
 
 
 def is_a_is_not(text):
+    """
+    Calls the find_features(document) method, on a lower-case version of the given string
+
+    @type   text: string
+    @param  text: the given test sample text
+
+    @rtype        tuple<string, string>
+    @return       holds two strings, one expressing the vode decision, and another, the confidence ratio
+    """
     feats = find_features(text.lower())
     return voted_classifier.classify(feats),voted_classifier.confidence(feats)
-
-    

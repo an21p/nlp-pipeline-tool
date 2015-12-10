@@ -7,6 +7,7 @@ import nltk
 import requests
 import re
 
+#import the trainer and is_a_is_not modules, as libraries
 import trainer
 import is_a_is_not as is_a
 
@@ -139,15 +140,15 @@ def wordTokenize(text, num) :
 			file.write(word+' ')
 		file.write('\n')
 	file.close()
-	return tokenized
+	return tokenizednum
 
 #----------------------------------------------------------------------------------------------------------------
 def posTag(text, num) :
 	"""
 	Extracts part-of-speech tags from a text segment's list of tokens.
-	Stores the output tokens in a file, predetermined by means of an index.
+	Stores the outputnum tokens in a file, predetermined by means of an index.
 
-	@type  text: string
+	@type  text: list<string>
 	@param text: holds the list of word tokens
 	@type   num: number
 	@param  num: represents the order of the file, in the sample data set
@@ -176,7 +177,7 @@ def stopWords(text, num) :
 	Filters stop words out of a text segment's list of part-of-speech tags.
 	Stores the output tokens in a file, predetermined by means of an index.
 
-	@type  text: string
+	@type  text: list< < tuple < string, string > > >
 	@param text: holds the list of POS tags
 	@type   num: number
 	@param  num: represents the order of the file, in the sample data set
@@ -209,7 +210,7 @@ def stem(text, num) :
 	Outputs stems from a a text segment's list of part-of-speech tags.
 	Stores the output tokens in a file, predetermined by means of an index.
 
-	@type  text: string
+	@type  text: list< < tuple < string, string > > >
 	@param text: holds the list of POS tags
 	@type   num: number
 	@param  num: represents the order of the file, in the sample data set
@@ -263,15 +264,6 @@ def chunk(text) :
 	for sentence in text:
 		chunked = chunkParser.parse(sentence)
 		traverse(chunked)
-
-#----------------------------------------------------------------------------------------------------------------
-def stem(text, num) :
-	file_title=str(num)+'_5_stemmed'
-
-	ps = PorterStemmer()
-
-	for w in text:
- 		print(ps.stem(w))
 
 #----------------------------------------------------------------------------------------------------------------
 def analyseFile(filename, a) :
@@ -405,8 +397,8 @@ def remove(value, deletechars):
 	@type   value: string
 	@param  value: the source string, to be processed
 
-	@rtype  value: string
-	@return value: the string, after processing is done
+	@rtype  	   string
+	@return 	   the string following processing
 	"""
 	for c in deletechars:
 		value = value.replace(c,'')
