@@ -375,10 +375,25 @@ def parseHTML(url, num):
 
 #----------------------------------------------------------------------------------------------------------------
 def test_is_a(test_module, sample_path):
+	"""
+	Generic function to call the sample testing function from the
+	is_a_is_not object, of which it is a member. That is executed
+	from the corresponding imported, module. It outputs whether
+	each test sentence belongs to the category, or not.
+
+	@type  test_module: string
+	@param test_module: a reference to the is_a_is_not module
+
+	@type  sample_path: string
+	@param sample_path: the path of the sample text file, to test
+	"""
 	sample = open(sample_path, "r").read()
 
+
 	for line in sample.split("\n"):
-		print(test_module.is_a_is_not(line))
+		outTuple = test_module.is_a_is_not(line)
+		print(outTuple)
+		print(line + "\n" + str(outTuple[0]) + "\n" + str(outTuple[1]*100) + "% accuracy\n")
 
 
 #----------------------------------------------------------------------------------------------------------------
