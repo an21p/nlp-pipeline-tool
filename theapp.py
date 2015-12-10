@@ -7,6 +7,8 @@ import nltk
 import requests
 import re
 
+import trainer
+
 from bs4 import BeautifulSoup
 
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -394,8 +396,15 @@ def main():
 		
 		elif sys.argv[1] == "-a":
 			if len(sys.argv) == 3:
+				print("Analysing the file...")
 				analyseFile( str(sys.argv[2]), True)
-			else: print("invalid number of parameters for function 'analyseFile()'")
+			else: print("Invalid number of parameters for the analyse 'a' command, terminating.")
+
+		elif sys.argv[1] == '-t':
+			if len(sys.argv) == 4:
+				print("Training from the corpus, please be patient...")			
+				trainer.trainCorpus(str(sys.argv[2]), str(sys.argv[3]))
+			else: print("Invalid number of parameters for the train 't' command, terminating")
 		
 		sys.exit()
 

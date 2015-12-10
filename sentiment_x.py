@@ -84,7 +84,7 @@ voted_classifier = VoteClassifier(
 
 
 def sentiment(text):
-    feats = find_features(text)
+    feats = find_features(text.lower())
     return voted_classifier.classify(feats),voted_classifier.confidence(feats)
 
     
