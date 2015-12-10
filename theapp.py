@@ -91,18 +91,26 @@ def mainMenu() :
 		print("""
 Main Menu:
 	[1] Analyse a file
-	[2] Help
-	[3] Quit
+	[2] Train from two complementary category sentence sets
+	[3] Test against a sample list of sentences
+	[4] Show help
+	[0] Quit
 		""")
 
-		option = int(input("Enter a number : "))
+		option = int(input("Enter a number: "))
 		if option == 1 :
 			analyseFile( \
-				input("\nEnter the name of the file containing a list of websites : "))
-			
-		elif option == 2 : showHelp()
-		elif option == 3 : sys.exit()
-		else : print("Wrong Input")
+				input("Enter the name of the file containing a list of websites:\n"))
+		elif option == 2 :
+			trainer.trainCorpus( \
+				input("Enter the path and filename of the corpus of sentences which belong to the category:\n"),
+				input("Enter the path and filename of corpus of sentences which don't belong to it:\n"))
+		elif option == 3 :
+			test_is_a(is_a, \
+				input("Enter the path and filename of the sample text file, to test against:\n"))
+		elif option == 4 : showHelp()
+		elif option == 0 : sys.exit()
+		else : print("Incorrect input")
 
 #----------------------------------------------------------------------------------------------------------------
 def wordTokenize(text, num) :
