@@ -384,8 +384,7 @@ def test_is_a(test_module, sample_path):
 
 	for line in sample.split("\n"):
 		outTuple = test_module.is_a_is_not(line)
-		print(outTuple)
-		print(line + "\n" + str(outTuple[0]) + "\n" + str(outTuple[1]*100) + "% accuracy\n")
+		print(line + "\n" + str(outTuple[0]) + " with " + str(outTuple[1]*100) + "% confidence\n")
 
 
 #----------------------------------------------------------------------------------------------------------------
