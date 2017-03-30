@@ -15,9 +15,8 @@
 - NLTK
 
 ## Contributors
-[Antonis Pishias](https://github.com/antonispishias)
-
-[Alexander George Karavournarlis](https://www.linkedin.com/in/alex-dj-prosgio-karavounarlis-322b5173/)
+- [Antonis Pishias](https://github.com/antonispishias)
+- [Alexander George Karavournarlis](https://www.linkedin.com/in/alex-dj-prosgio-karavounarlis-322b5173/)
 
 ## Dependencies
 The software was developed in the latest Python build, using Sublime Text 3. A python interpreter is necessary, in order to run the bundled .py scripts:
@@ -51,6 +50,7 @@ In order to install the above, further dependencies are expected to be fulfilled
 
 ## Usage
 _filenames of the format **n_m_restOfName.txt**_
+
 `n` represents the ordered count of the parsed websites
 `m` represents ordered count of the current process’s stage
 if `m = 0`, then restOfName is the title of the submitted webpage
@@ -80,12 +80,15 @@ It requires an absolute path of a file, which is used as the test sample. Each o
 
 
 *trainer.py*
+
 The python module, which uses the NLTK and other libraries, in order to train the system, against the provided sample.
 
 *is_a_is_not.py*
+
 The python module, which uses the libraries, in order to output the classification decision, as well as its confidence, for a sample of test sentences, after training.
 
 *required_websites.txt*
+
 The text file, necessary to test the analysis tool with, since it contains the URL of the websites requested to be parsed, in the assignment’s description.
 
 ### Example Usages
@@ -100,7 +103,9 @@ Outputs result to console
 
 ## Documentation
 As a description of the architecture, functionality and implementation details, please visit the generated wiki at: [/html/index.html]
+
 It covers the three main scripts: _theapp.py_, _trainer.py_ and _is_a_is_not.py_
+
 All the custom-written functions have been documented
 Having executed a script, you can print a particular function’s comments by running:
 ```print function_name.__doc__```
