@@ -15,8 +15,8 @@
 - NLTK
 
 ## Contributors
-- [Antonis Pishias](https://github.com/antonispishias)
-- [Alexander George Karavournarlis](https://www.linkedin.com/in/alex-dj-prosgio-karavounarlis-322b5173/)
+[Antonis Pishias](https://github.com/antonispishias)
+[Alexander George Karavournarlis](https://www.linkedin.com/in/alex-dj-prosgio-karavounarlis-322b5173/)
 
 ## Dependencies
 The software was developed in the latest Python build, using Sublime Text 3. A python interpreter is necessary, in order to run the bundled .py scripts:
@@ -59,8 +59,7 @@ if `m > 0`, then restOfName, declares whether the file includes any of the follo
 - The part-of-speech tags (e.g. `1_2_posTagged`)
 - The insignificant stop words (e.g. `1_3_stopwords`)
 
-theapp.py
-------
+#### theapp.py
 The main .py script, the app executes from. Its most significant functions are as follows:
 
 **Analyse**: Can be executed via the command parameters `-a` and `--analyse`. Can also be accessed, by means of the main menu, as option 1.
@@ -79,16 +78,13 @@ It requires an absolute path of a file, which is used as the test sample. Each o
 **Quit**: Terminates execution of the application, from the looping main menu.
 
 
-trainer.py
-------
+#### trainer.py
 The python module, which uses the NLTK and other libraries, in order to train the system, against the provided sample.
 
-is_a_is_not.py
-------
+#### is_a_is_not.py
 The python module, which uses the libraries, in order to output the classification decision, as well as its confidence, for a sample of test sentences, after training.
 
-required_websites.txt
-------
+#### required_websites.txt
 The text file, necessary to test the analysis tool with, since it contains the URL of the websites requested to be parsed, in the assignment’s description.
 
 ### Example Usages
