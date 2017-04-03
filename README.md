@@ -15,7 +15,7 @@
 - NLTK
 
 ## Contributors
-[Antonis Pishias](https://github.com/antonispishias)
+[Antonis Pishias](https://github.com/antonispishias) |
 [Alexander George Karavournarlis](https://www.linkedin.com/in/alex-dj-prosgio-karavounarlis-322b5173/)
 
 ## Dependencies
