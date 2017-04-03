@@ -14,10 +14,6 @@
 - Stemming
 - NLTK
 
-## Contributors
-[Antonis Pishias](https://github.com/antonispishias) |
-[Alexander George Karavournarlis](https://www.linkedin.com/in/alex-dj-prosgio-karavounarlis-322b5173/)
-
 ## Dependencies
 The software was developed in the latest Python build, using Sublime Text 3. A python interpreter is necessary, in order to run the bundled .py scripts:
 
@@ -137,3 +133,7 @@ LogisticRegression_classifier accuracy percent: 70.48192771084338
 LinearSVC_classifier accuracy percent: 69.77911646586345
 SGDClassifier accuracy percent: 69.37751004016064
 ```
+
+## Contributors
+[Antonis Pishias](https://github.com/antonispishias) |
+[Alexander George Karavournarlis](https://www.linkedin.com/in/alex-dj-prosgio-karavounarlis-322b5173/)
