@@ -136,4 +136,4 @@ SGDClassifier accuracy percent: 69.37751004016064
 
 ## Contributors
 [Antonis Pishias](https://github.com/antonispishias) |
-[Alexander George Karavournarlis](https://www.linkedin.com/in/alex-dj-prosgio-karavounarlis-322b5173/)
+[Alexander George Karavournarlis](https://www.linkedin.com/in/al3kdj)
